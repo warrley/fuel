@@ -43,6 +43,12 @@ input {
     border-radius: 10px;
     font-size: 22px;
     font-weight: bold;
+    transition: all .3s;
+    cursor: pointer;
+}
+.button:hover {
+    opacity: .9;
+    scale: 1.01;
 }
 
 
