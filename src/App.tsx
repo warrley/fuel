@@ -1,4 +1,4 @@
-import { act, use, useState } from 'react';
+import { useState } from 'react';
 import './App.css'
 
 import logoImg from './assets/logo.png'
