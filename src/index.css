@@ -5,7 +5,8 @@
     box-sizing: border-box;
 }
 body {
-    background-color: #22272e;
+    background: url(/src/assets/bg.jpg);
+    background-size: cover;
     height: 100vh;
     display: flex;
     justify-content: center;
