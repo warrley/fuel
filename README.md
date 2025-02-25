@@ -2,7 +2,7 @@
 
 Este é um comparador de preços de combustíveis.
 
-<a href="[https://eletronic-store-azure.vercel.app/](https://fuel-ochre.vercel.app/)">Clique para acessar o site</a> 
+<a href="https://fuel-ochre.vercel.app/">Clique para acessar o site</a> 
 
 ## Tecnologias Usadas
 
