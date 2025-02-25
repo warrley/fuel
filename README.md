@@ -1,4 +1,4 @@
-# Eletronic's Store
+# Gasolina ou Álcool?
 
 Este é um comparador de preços de combustíveis.
 
