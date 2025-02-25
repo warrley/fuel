@@ -7,6 +7,7 @@ Este é um comparador de preços de combustíveis.
 ## Tecnologias Usadas
 
 -React  
+-Vite  
 -Typescript  
 -CSS
 
