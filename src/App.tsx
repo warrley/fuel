@@ -1,32 +1,48 @@
-import { act, useState } from 'react';
+import { act, use, useState } from 'react';
 import './App.css'
 
 import logoImg from './assets/logo.png'
+import arrow from './assets/leftarrow.png'
 
 function App() {
   const [alcohol, setAlcohol] = useState<number>(0);
   const [gasoline, setGasoline] = useState<number>(0);
+  const [relation, setRelation] = useState<number>(0)
+  const [show, setShow] = useState<boolean>(false);
 
   const handleCalc = () => {
     if (alcohol > 0 && gasoline > 0) {
-      var res = alcohol / gasoline;
-      if (res <= 0.7) {
-        alert("deu bom");
-      }
+      setRelation(alcohol / gasoline);
+      setShow(true);
     } else {
       alert("Enter a valid values");
     }
 
   }
 
+  const handleBack = () => {
+    setShow(false);
+    setAlcohol(0);
+    setGasoline(0);
+  }
+
   return (
     <div>
-      <main className='container'>
+      {show ?
+        <div className='best'>
+          <img onClick={handleBack} src={arrow} alt="" />
+          <h1>it's better to use <strong style={relation <= 0.7 ? {color: 'skyblue'} : {color: 'yellow'}}>{relation <= 0.7 ? 'alcohol' : 'gasoline'}</strong></h1>
+          <h3 style={{color: 'skyblue'}}>Alcool: R$ {alcohol.toFixed(2)}</h3>
+          <h3 style={{color: 'yellow'}}>Gasolina: R$ {gasoline.toFixed(2)}</h3>
+          <h3>alcohol is {(relation * 100).toFixed(2)}% of the price of gasoline</h3>
+        </div>
+        : 
+        <main className='container'>
         <img src={logoImg} alt="" />
-      <h1>What is the best option?</h1>
+      <h1>what is the best option?</h1>
 
       <form>
-        <label>Alcohol (price per liter): </label>
+        <label>alcohol (price per liter): </label>
         <input
           type='number'
           placeholder='4,9'
@@ -37,7 +53,7 @@ function App() {
           onChange={e => setAlcohol(parseFloat(e.target.value))}
         />
         
-        <label>Gasoline (price per liter): </label>
+        <label>gasoline (price per liter): </label>
         <input
           type='number'
           placeholder='4,9'
@@ -51,6 +67,9 @@ function App() {
         <input className='button' onClick={handleCalc} type="submit" value="Calculate"/>
         </form>
       </main>
+      }
+
+      
     </div>
   )
 }

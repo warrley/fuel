@@ -44,3 +44,34 @@ input {
     font-size: 22px;
     font-weight: bold;
 }
+
+
+.best {
+    padding: 20px;
+    margin-top: 30px;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(15px);
+    border: 2px solid #027930;
+    border-radius: 20px;
+    color: white;
+    flex-direction: column;
+    gap: 10px;
+}
+.best img {
+    background-color: #027930;
+    padding: 15px;
+    border-radius: 50%;
+    height: 70px;
+    position: absolute;
+    left: 0;
+    margin-left: -35px;
+    cursor: pointer;
+    transition: all .3s;
+}
+.best img:hover {
+    opacity: 0.8;
+}
